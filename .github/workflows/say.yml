@@ -1,7 +1,7 @@
 on:
   workflow_call:
     inputs:
-      username:
+      name:
         required: true
         type: string
 jobs:
@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo $username
+    - run: echo "${{ github.event.inputs.name }}"
