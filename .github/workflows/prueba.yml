@@ -1,0 +1,11 @@
+name: CI
+on:
+  push:
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          python
+          python3
