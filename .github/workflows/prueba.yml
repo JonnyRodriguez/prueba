@@ -11,3 +11,12 @@ jobs:
         -e AWS_ACCESS_KEY_ID=${{ secrets.S3_KEY }} \
         -e AWS_SECRET_ACCESS_KEY=${{ secrets.S3_SECRET }} \
         peakcom/s5cmd ls s3://cdnsellatuparley
+    - run: wget https://github.com/peak/s5cmd/releases/download/v1.4.0/s5cmd_1.4.0_Linux-64bit.tar.gz -qO- | tar -xz
+    
+    - env: 
+        S3_ENDPOINT_URL: ${{ secrets.S3_ENDPOINT }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.S3_KEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET }}
+      run: ./s5cmd ls s3://cdnsellatuparley  
+      
+    
