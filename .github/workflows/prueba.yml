@@ -8,6 +8,8 @@ jobs:
     steps:
       - run: pip install boto3
       - run: npm install @aws-sdk/client-s3
+      - run: go get -u github.com/aws/aws-sdk-go
+      - run: composer require aws/aws-sdk-php
       - run: |
           cat >prueba.py <<EOF
           import sys
