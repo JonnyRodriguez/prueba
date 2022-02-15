@@ -5,12 +5,13 @@ jobs:
   upload:
     runs-on: ubuntu-latest
 
-    steps:    
+    steps:
+    - run: wget https://github.com/peak/s5cmd/releases/download/v1.4.0/s5cmd_1.4.0_Linux-64bit.tar.gz -qO- | tar -xz
+    
     - env: 
         S3_ENDPOINT_URL: ${{ secrets.S3_ENDPOINT }}
         AWS_ACCESS_KEY_ID: ${{ secrets.S3_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET }}
       run: |
-        aws s3 ls --endpoint=${{ secrets.S3_ENDPOINT }} 
-      
-    
+        echo "hola">prueba
+        ./s5cmd cp -acl public-read prueba s3://cdnsellatuparley/test/prueba   
