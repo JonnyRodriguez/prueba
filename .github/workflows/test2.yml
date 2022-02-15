@@ -6,6 +6,8 @@ jobs:
   say:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/say/say@v1
-        with:
-          name: monatest
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - uses: ./.github/actions/say/say@v1
+      with:
+        name: monatest
