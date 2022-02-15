@@ -6,17 +6,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: pip install boto3
-      - run: npm install @aws-sdk/client-s3
-      - run: go get -u github.com/aws/aws-sdk-go
-      - run: composer require aws/aws-sdk-php
-      - run: |
-          cat >prueba.py <<EOF
-          import sys
-          
-          print(sys.argv[0])
-          print(sys.argv[1])
-
-          EOF
-          cat prueba.py
-          python prueba.py hola
+    - run: |
+        docker run -e S3_ENDPOINT_URL={{ secrets.S3_ENDPOINT }} \
+        -e AWS_AWS_ACCESS_KEY_ID={{ secrets.S3_KEY }} \
+        -e AWS_SECRET_ACCESS_KEY={{ secrets.S3_KEY }} \
+        peakcom/s5cmd ls s3://cdnsellatuparley
