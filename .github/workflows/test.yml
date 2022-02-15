@@ -1,0 +1,9 @@
+name: test
+on:
+  workflow_call:
+
+jobs:
+  call-say:
+    uses: ./say.yml
+    with:
+      name: monatest
