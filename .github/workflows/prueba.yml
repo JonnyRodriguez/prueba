@@ -7,5 +7,5 @@ jobs:
 
     steps:
       - run: |
-          python
-          python3
+          python -v
+          python3 -v
