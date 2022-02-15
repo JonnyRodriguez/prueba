@@ -3,7 +3,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  - steps:
-      uses: ./.github/actions/say.yml
+  say:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/say.yml@v1
         with:
           name: monatest
