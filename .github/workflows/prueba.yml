@@ -14,6 +14,6 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET }}
       run: |
         echo "hola">prueba
-        ./s5cmd cp -acl public_read prueba s3://cdnsellatuparley/test/prueba   
+        ./s5cmd cp -acl public-read prueba s3://cdnsellatuparley/test/prueba   
       
     
