@@ -7,6 +7,8 @@ jobs:
 
     steps:
       - run: |
+          node -v
+          npm -v
           pip install boto3
           cat >prueba.py <<EOF
           import sys
@@ -16,4 +18,4 @@ jobs:
 
           EOF
           cat prueba.py
-          python prueba.py
+          python prueba.py hola
