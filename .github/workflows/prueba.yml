@@ -6,10 +6,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: pip install boto3
+      - run: npm install @aws-sdk/client-s3
       - run: |
-          node -v
-          npm -v
-          pip install boto3
           cat >prueba.py <<EOF
           import sys
           
