@@ -2,7 +2,7 @@
 name: web-ide
 
 on:
-  pull:
+  workflow_dispatch:
 
 jobs:
   add-link:
