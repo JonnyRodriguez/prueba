@@ -1,0 +1,13 @@
+name: say
+descripcion: to say something
+inputs:
+  msg:
+    required: true
+    type: string
+    default: hello people
+jobs:
+  say:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo "${{ inputs.name }}"
