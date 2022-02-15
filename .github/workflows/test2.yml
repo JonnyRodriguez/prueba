@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v2
-    - run: ls 
+    - run: pwd; ls 
     - uses: ./.github/actions/say/say@v1
       with:
         name: monatest
