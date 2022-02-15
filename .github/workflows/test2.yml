@@ -6,6 +6,6 @@ jobs:
   say:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/say.yml@v1
+      - uses: ./.github/actions/say/say@v1
         with:
           name: monatest
