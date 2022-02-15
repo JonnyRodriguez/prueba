@@ -10,13 +10,10 @@ jobs:
           pip install boto3
           cat >prueba.py <<EOF
           import sys
- 
-          total = len(sys.argv)
- 
-          cmdargs = str(sys.argv)
- 
-          print ("The total numbers of args passed to the script: %d " % total)
-          print ("Args list: %s " % cmdargs)
+          
+          print(sys.argv[0])
+          print(sys.argv[1])
+
           EOF
           cat prueba.py
           python prueba.py
