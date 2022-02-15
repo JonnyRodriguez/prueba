@@ -7,4 +7,4 @@ jobs:
 
     steps:
     - run: |
-        docker run -e S3_ENDPOINT_URL={{ secrets.S3_ENDPOINT }} -e AWS_AWS_ACCESS_KEY_ID={{ secrets.S3_KEY }} -e AWS_SECRET_ACCESS_KEY={{ secrets.S3_SECRET }} peakcom/s5cmd ls s3://cdnsellatuparley
+        docker run -i -e "S3_ENDPOINT_URL={{ secrets.S3_ENDPOINT }}" -e "AWS_ACCESS_KEY_ID={{ secrets.S3_KEY }}" -e "AWS_SECRET_ACCESS_KEY={{ secrets.S3_SECRET }}" peakcom/s5cmd ls s3://cdnsellatuparley
