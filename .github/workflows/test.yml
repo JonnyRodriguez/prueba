@@ -4,6 +4,6 @@ on:
 
 jobs:
   call-say:
-    uses: ./say.yml
+    uses: ./.github/workflows/say.yml
     with:
       name: monatest
