@@ -5,9 +5,8 @@ inputs:
     required: true
     type: string
     default: hello people
-jobs:
-  say:
-    runs-on: ubuntu-latest
-
-    steps:
-    - run: echo "${{ inputs.name }}"
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello "${{ inputs.msg }}".
+      shell: bash
