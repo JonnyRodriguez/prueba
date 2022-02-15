@@ -1,6 +1,11 @@
 name: say
 on:
   workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+        default: julius
   workflow_dispatch:
     inputs:
       name:
