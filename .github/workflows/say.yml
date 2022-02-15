@@ -4,3 +4,9 @@ on:
       username:
         required: true
         type: string
+jobs:
+  say:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo $username
