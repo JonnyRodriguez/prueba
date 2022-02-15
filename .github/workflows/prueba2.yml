@@ -11,6 +11,6 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.S3_KEY }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET }}
       run: |
-        aws s3 ls --endpoint="$S3_ENDPOINT_URL" 
+        aws s3 ls --endpoint=${{ secrets.S3_ENDPOINT }} 
       
     
